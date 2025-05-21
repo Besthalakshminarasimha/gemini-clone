@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gemini Clone UI with Voice Recognition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="fade-in">
+  <div class="sidebar">
+    <button title="Menu" onclick="toggleDropdown()">☰</button>
+    <div class="dropdown" id="menuDropdown">
+      <button onclick="alert('Explore Chats Clicked')">📁 Explore Chats</button>
+      <button onclick="alert('New Chat Created')">✏️ New Chat</button>
+    </div>
+    <button title="Settings" onclick="alert('Settings opened')">⚙️</button>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="left">
+        Gemini 
+        <select id="modelSelect" class="model" onchange="updateModel()">
+          <option value="2.5 Flash" selected>2.5 Flash</option>
+          <option value="1.5 Pro">1.5 Pro</option>
+          <option value="1.0 Ultra">1.0 Ultra</option>
+          <option value="3.0 Vision">3.0 Vision</option>
+          <option value="3.5 Turbo">3.5 Turbo</option>
+        </select>
+      </div>
+      <div class="right">
+        <button onclick="toggleTheme()">🌓</button>
+        <button onclick="alert('Upgrade Clicked')">✨ Upgrade</button>
+        <button title="Trash" onclick="alert('Trash cleared')">🗑️</button>
+        <button class="login" onclick="alert('Login/Account Settings')">Login</button>
+        <img src="https://i.pravatar.cc/30" alt="User" style="border-radius: 50%" />
+      </div>
+    </div>
+
+    <div class="greeting">
+      <span>Hello, Lakshmi Narasimha</span>
+      <div class="subtext">How can I help you?</div>
+    </div>
+
+    <div class="chat-area" id="chat"></div>
+
+    <div class="input-bar">
+      <div>
+        <div class="input-box">
+          <label for="fileInput" title="Attach" style="cursor: pointer;">➕</label>
+          <input id="fileInput" type="file" style="display: none;" />
+          <input type="text" id="userInput" placeholder="Ask Gemini" onkeypress="if(event.key==='Enter')sendMessage()" />
+          <div class="tools">
+            <button id="micBtn" title="Mic" onclick="toggleMic()">🎤</button>
+            <button onclick="sendMessage()">➡️</button>
+          </div>
+        </div>
+        <div class="tool-buttons">
+          <button onclick="alert('Deep Research tool')">🔍 Deep Research</button>
+          <button onclick="alert('Canvas tool')">🖼️ Canvas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
